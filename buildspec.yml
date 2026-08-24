@@ -1,0 +1,13 @@
+version: 0.2
+
+phases:
+  build:
+    commands:
+      - echo "Building website..."
+      - mkdir -p dist
+      - cp index.html dist/index.html
+
+artifacts:
+  files:
+    - '**/*'
+  base-directory: dist
