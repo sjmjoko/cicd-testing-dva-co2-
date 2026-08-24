@@ -1,10 +1,27 @@
 version: 0.2
 
 phases:
+  install:
+    commands:
+      - echo "Installing dependencies..."
+      - npm init -y
+      - npm install --save-dev htmlhint
+
+  pre_build:
+    commands:
+      - echo "Running HTML validation..."
+      - npx htmlhint index.html
+
   build:
     commands:
-      - echo "Building website..."
-      - echo "Build completed successfully"
+      - echo "Running build checks..."
+      - test -f index.html
+      - echo "index.html exists"
+      - echo "Build and tests completed successfully"
+
+  post_build:
+    commands:
+      - echo "Preparing deployment artifact..."
 
 artifacts:
   files:
