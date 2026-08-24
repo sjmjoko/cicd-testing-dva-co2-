@@ -3,8 +3,8 @@ version: 0.2
 phases:
   build:
     commands:
-      - echo "Deploying website to S3..."
-      - aws s3 sync . s3://cicd-testing-dva-co2 --exclude ".git/*" --exclude "buildspec.yml"
+      - echo "Building website..."
+      - echo "Build completed successfully"
 
 artifacts:
   files:
